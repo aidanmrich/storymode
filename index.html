@@ -72,15 +72,16 @@
   }
 
   /* IMAGE */
-  #art {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: #e8dcc2;
-    border-bottom: 2px solid #d2b48c;
-  }
+#art {
+  width: 100%;
+  aspect-ratio: 16 / 9;     /* keep perfect proportions */
+  height: auto !important;  /* override your 28vh */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #e8dcc2;
+}
+
 
   /* STORY AREA */
   #story {
@@ -285,14 +286,17 @@
     background: #3a6247;
   }
 
-  #menu-bg {
+#menu-bg {
   position: absolute;
   inset: 0;
   background-image: url('images/menubackground.png');
-  background-size: cover;
+  background-size: contain;   /* was cover */
+  background-repeat: no-repeat;
   background-position: center;
-  z-index: 10;   /* behind the menu */
+  background-color: #000;     /* optional: prevents white bars */
+  z-index: 10;
 }
+
 
 #start-screen {
   position: absolute;
@@ -410,13 +414,18 @@
   }
 
   /* Change the grid so story is NOT forced to 1fr */
-  #game {
-    height: auto;
-    max-height: none;
-    grid-template-rows: auto 28vh auto auto;  /* header, image, story, input */
-  }
+#game {
+  height: auto;
+  max-height: none;
+  grid-template-rows: auto auto 1fr auto; /* header, image, story, input */
+}
 
- #art {
+
+  #main-menu {
+  transform: scale(1.15);   /* make menu bigger */
+}
+
+#art {
   width: 100%;
   height: auto;
   aspect-ratio: 16 / 9;        /* keep perfect proportions */
@@ -429,11 +438,11 @@
 
 
   /* Now this will actually work */
-  #story {
-    max-height: 18vh;
-    overflow-y: auto;
-    padding: 6px 10px;
-  }
+#story {
+  max-height: 22vh;     /* was 18vh but too small */
+  overflow-y: auto;
+}
+
 
   #story-text {
     font-size: 13px;
@@ -448,10 +457,10 @@
     font-size: 13px;
   }
 
-  #input-area {
-    grid-template-columns: 1fr;
-    padding: 8px 10px;
-  }
+#input-area {
+  padding: 6px 10px;
+}
+
 
   #answer {
     font-size: 14px;
