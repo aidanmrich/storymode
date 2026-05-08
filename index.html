@@ -411,7 +411,8 @@
 
   /* Make the game card shrink to content height */
   #game {
-    height: 100px !important;
+    height: auto !important;
+    max-height: none !important;
     border-radius: 0;
     box-shadow: none;
     border-left: none;
@@ -427,7 +428,7 @@
 
   /* Story area: readable, no scrollbar, no clipping */
   #story {
-    overflow: visible;
+    overflow: hidden;
     padding: 10px 14px;
   }
 
