@@ -290,12 +290,13 @@
   position: absolute;
   inset: 0;
   background-image: url('images/menubackground.png');
-  background-size: contain;   /* was cover */
+  background-size: contain;     /* show full image */
   background-repeat: no-repeat;
   background-position: center;
-  background-color: #000;     /* optional: prevents white bars */
+  background-color: #e8dcc2;    /* <-- parchment color instead of black */
   z-index: 10;
 }
+
 
 
 #start-screen {
@@ -415,10 +416,10 @@
 
   /* Change the grid so story is NOT forced to 1fr */
 #game {
-  height: auto;
-  max-height: none;
-  grid-template-rows: auto auto 1fr auto; /* header, image, story, input */
+  height: 100vh;              /* lock to viewport height */
+  grid-template-rows: auto 26vh 1fr auto;  
 }
+
 
 
   #main-menu {
@@ -439,9 +440,11 @@
 
   /* Now this will actually work */
 #story {
-  max-height: 22vh;     /* was 18vh but too small */
+  max-height: 22vh;     /* controlled height */
   overflow-y: auto;
+  padding: 6px 10px;
 }
+
 
 
   #story-text {
@@ -459,7 +462,10 @@
 
 #input-area {
   padding: 6px 10px;
+  grid-template-columns: 1fr;
+  gap: 6px;
 }
+
 
 
   #answer {
