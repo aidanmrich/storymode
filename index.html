@@ -412,13 +412,6 @@
     background: #e7d0aa;
   }
 
-  #story {
-  height: 22vh;          /* fixed height everywhere */
-  max-height: 22vh;
-  overflow-y: auto;
-}
-
-
 @media (max-width: 600px) {
 
   body {
@@ -434,12 +427,29 @@
   }
 
 #game {
-  height: auto;
-  max-height: none;
-  grid-template-rows: auto auto 22vh auto; /* header, image, story, input */
+  height: auto !important;     /* <-- stops the white block */
+  max-height: none !important;
+  grid-template-rows: auto auto auto auto; /* header, image, story, input */
+  background: #fff8ec;         /* keep your card look */
 }
 
 
+ #art {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto !important;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #e8dcc2; /* blends with parchment */
+}
+
+
+  #story {
+    max-height: none;                 /* let it size naturally */
+    overflow-y: visible;
+    padding: 6px 10px;
+  }
 
   #input-area {
     grid-template-columns: 1fr;
