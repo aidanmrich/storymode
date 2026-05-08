@@ -416,10 +416,17 @@
     grid-template-rows: auto 28vh auto auto;  /* header, image, story, input */
   }
 
-  #art {
-    height: 28vh;
-    min-height: 28vh;
-  }
+ #art {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;        /* keep perfect proportions */
+  background-size: contain;    /* no cropping */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #e8dcc2;
+  border-bottom: 2px solid #d2b48c;
+}
+
 
   /* Now this will actually work */
   #story {
