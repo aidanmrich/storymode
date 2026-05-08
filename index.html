@@ -426,30 +426,31 @@
     overflow-y: auto;
   }
 
-  #game {
-    width: 100%;
-    max-width: 900px;
-    height: auto;                     /* <-- was 100vh earlier */
-    max-height: none;
-    grid-template-rows: auto auto auto auto;  /* header, image, story, input */
-  }
+#game {
+  height: auto !important;     /* <-- stops the white block */
+  max-height: none !important;
+  grid-template-rows: auto auto auto auto; /* header, image, story, input */
+  background: #fff8ec;         /* keep your card look */
+}
 
-  #art {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    height: auto;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: #e8dcc2;
-    border-bottom: 2px solid #d2b48c;
-  }
 
-  #story {
-    max-height: none;                 /* let it size naturally */
-    overflow-y: visible;
-    padding: 6px 10px;
-  }
+ #art {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto !important;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #e8dcc2; /* blends with parchment */
+}
+
+
+#story {
+  max-height: none;
+  overflow: visible;
+  padding: 6px 10px;
+}
+
 
   #input-area {
     grid-template-columns: 1fr;
