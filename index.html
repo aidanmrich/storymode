@@ -400,6 +400,84 @@
   background: #3a6247;
 }
 
+/* MOBILE LAYOUT FIXES */
+@media (max-width: 600px) {
+
+  /* Let the page scroll normally */
+  body {
+    align-items: flex-start;
+    overflow-y: auto;
+  }
+
+  /* Make the game card shrink to content height */
+  #game {
+    height: auto;
+    max-height: none;
+    border-radius: 0;
+    box-shadow: none;
+    border-left: none;
+    border-right: none;
+  }
+
+  /* Image stays perfect and not too tall */
+  #art {
+    aspect-ratio: 16 / 9;
+    height: auto;
+    background-size: contain;
+  }
+
+  /* Story area: readable, no scrollbar, no clipping */
+  #story {
+    overflow: visible;
+    padding: 10px 14px;
+  }
+
+  #story-text {
+    font-size: 14px;
+    line-height: 1.25;
+  }
+
+  #challenge {
+    font-size: 12px;
+  }
+
+  #feedback {
+    font-size: 13px;
+  }
+
+  /* Input area: stacked for mobile */
+  #input-area {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    padding: 10px 14px;
+  }
+
+  #answer {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  #check-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+  }
+
+  /* Header tweaks */
+  header h1 {
+    font-size: 14px;
+  }
+
+  .hearts span {
+    font-size: 14px;
+  }
+
+  .progress-bar {
+    width: 90px;
+  }
+}
+
+
 </style>
 
 </head>
